@@ -22,7 +22,7 @@ while True:
 
     if cv.waitKey(20) & 0xFF == ord('t'):
         break
-        #if letter t is pressed then the video is terminated..
+        #if letter t is pressed then the video is terminated.
 
 capture.release()
 cv.destroyAllWindows()
