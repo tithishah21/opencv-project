@@ -2,27 +2,27 @@
 
 import cv2 as cv
 
-img = cv.imread('../Resources/Photos/cats.jpg')
-cv.imshow('Cats', img)
+#Reading images
+# img = cv.imread('../Resources/Photos/cat_large.jpg')
+# cv.imshow('Cat', img)
+# cv.waitKey(0)
+# #keeps the image window open till any key is pressed
 
-cv.waitKey(0)
 
 # Reading Videos
 capture = cv.VideoCapture('../Resources/Videos/dog.mp4')
-
+#webcam is referenced by using integer 0 , and to read an alr existing video is done by providing path to video
 while True:
     isTrue, frame = capture.read()
-    
-    # if cv.waitKey(20) & 0xFF==ord('d'):
-    # This is the preferred way - if `isTrue` is false (the frame could 
-    # not be read, or we're at the end of the video), we immediately
-    # break from the loop. 
-    if isTrue:    
-        cv.imshow('Video', frame)
-        if cv.waitKey(20) & 0xFF==ord('d'):
-            break            
-    else:
+
+    if not isTrue:
         break
+
+    cv.imshow('Video', frame)
+
+    if cv.waitKey(20) & 0xFF == ord('t'):
+        break
+        #if letter t is pressed then the video is terminated..
 
 capture.release()
 cv.destroyAllWindows()
