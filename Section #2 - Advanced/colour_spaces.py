@@ -1,7 +1,7 @@
 #pylint:disable=no-member
 
 import cv2 as cv
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 
 img = cv.imread('../Resources/Photos/park.jpg')
 cv.imshow('Park', img)
@@ -25,6 +25,7 @@ cv.imshow('LAB', lab)
 rgb = cv.cvtColor(img, cv.COLOR_BGR2RGB)
 cv.imshow('RGB', rgb)
 
+#opencv reads the BGR (blue green red) format of img
 # HSV to BGR
 lab_bgr = cv.cvtColor(lab, cv.COLOR_LAB2BGR)
 cv.imshow('LAB --> BGR', lab_bgr)
